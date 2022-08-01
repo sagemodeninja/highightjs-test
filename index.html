@@ -1,25 +1,17 @@
 <html>
     <head>
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css"> -->
-        <link rel="stylesheet" href="github-dark-default.css">
-        <style>
-            code {
-                height: 500px;
-                width: 500px;
-            }
-        </style>
+        <link rel="stylesheet" href="vs-code-dark-plus.css">
     </head>
     <body>
-        <pre>
-            <code class="language-json">{
-    fullName: "Gary",
-    lastName: "Antier",
-    age: 190
-}</code>
-        </pre>
-
-        <p>Theme: <a href="https://github.com/Yukaii/github-highlightjs-themes/blob/master/themes/github-dark-default.css">Github Dark Default</a></p>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script>
+        <pre id="json-editor" spellcheck="false" contenteditable><code class="language-json">{fname: "Gary", lname: "Antier", age: 23}</code></pre>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-json.min.js"></script>
+        <script>
+            var prism = document.querySelector("#json-editor");
+            prism.addEventListener("input", e => {
+                console.log(prism.innerHTML);
+            });
+        </script>
     </body>
 </html>
